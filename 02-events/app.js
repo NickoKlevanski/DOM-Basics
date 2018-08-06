@@ -11,8 +11,17 @@ for (let i = 0; i < treeBranch.length; i++) {
   span.className = "tree__text";
 }
 
-function handleTreeItem (event) {
+const handleTreeItem = (event) => {
   const target = event.target;
+
+  if (target.tagName != 'SPAN') {
+    return;
+  }
+
+  if (event.ctrlKey) {
+    toggleClass(target);
+  }
+
   const childrenContainer = target.parentNode.getElementsByTagName('div');
 
   if(!childrenContainer) {
@@ -23,6 +32,10 @@ function handleTreeItem (event) {
     const childrenDiv = childrenContainer[i];
     childrenDiv.hidden = !childrenDiv.hidden;
   }
+}
+
+const toggleClass = (span) => {
+  span.classList.toggle('selected');
 }
 
 tree.addEventListener('click', handleTreeItem);

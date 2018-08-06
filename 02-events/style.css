@@ -1,22 +1,26 @@
 .tree {
-    background: #fff;
+  background: #fff;
 }
 
 .tree__item {
-    position: relative;
-    padding-left: 15px;
+  position: relative;
+  padding-left: 15px;
 }
 
 .tree__item::after {
-    content: '';
-    position: absolute;
-    top: 3px;
-    left: 0;
-    width: 10px;
-    height: 10px;
-    background-image: url('folder-icon.png');
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background-image: url('folder-icon.png');
 }
 
 .tree__text {
-    cursor: pointer;
+  cursor: pointer;
+}
+
+.selected {
+  background: #ccc;
 }
