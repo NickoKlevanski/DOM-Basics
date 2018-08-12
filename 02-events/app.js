@@ -18,7 +18,10 @@ const handleTreeItem = (event) => {
     return;
   }
 
-  toggleClass(target);
+  if (event.ctrlKey) {
+    toggleClass(target);
+    return;
+  }
 
 
   const childrenContainer = target.parentNode.getElementsByTagName('div');
